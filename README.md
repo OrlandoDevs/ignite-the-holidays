@@ -12,11 +12,13 @@ If you have ANY questions, please reach out to me directly in Slack!
 
 In order for me to generate the automatically advancing slide decks, I need a bit of your help.
 
-Clone this repo and create a fork.
+Clone this repo (or) create a fork. Shoot me your github ID and I'll just add it to this repo for write privs.
 
 You will find a folder in this repository called `resources\images\(your-presentation)`. In that folder, if you could drop your 20 images of your slides, a script will auto-generate the slide deck and present it using some of the magic mentioned below.
 
 Depending on what you built your slide deck in, you might be able to export the slides to images. That will make it easy. I did mine by doing a full screen presentation and then screen-shooting each one. It was relatively quick for me because it automatically saved each one in a folder then I just moved them (and remove the stupid space in the name, dumb Windows.) See below.
+
+Also, please remove the file called `deleteme` in your folder. This was temporary in order for the folder to be pushed to GitHub.
 
 > NOTE: Please include .jpg or .png images only. ALSO - File names ***cannot contain spaces***, or bad things happen.
 

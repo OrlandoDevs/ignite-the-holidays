@@ -1,7 +1,8 @@
 # KUnit testing
 <BR><BR>
 
-## Unit testing the Linux Kernel
+## Unit testing
+## the Linux Kernel
 
 <BR><BR>
 

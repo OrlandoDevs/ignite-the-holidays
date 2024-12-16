@@ -1,6 +1,7 @@
 node_modules
 bower_components
 index.html
+package-lock.json
 
 slides/list.json
 slides/*.html

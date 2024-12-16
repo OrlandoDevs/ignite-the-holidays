@@ -63,15 +63,15 @@ It is built on the shoulders of:
 
 ## Presenters and Order
 
-| Presenter         | Presentation                                                                 | Time  |
-| ----------------- | ---------------------------------------------------------------------------- | ----- |
-| George Westwater  | Chef CI/CD: Sizzling Success with 1,200+ Pipelines, 13K Builds/Day, and You! | 9:35  |
-| Dan-Joe Lopez     | How to Fail a Cookbook Code Review                                           | 9:40  |
-| Mike Butler       | How to Solve a Rubik's Cube                                                  | 9:45  |
-| Heather Thacker   | Pastry Chef to Progress Chef                                                 | 10:15 |
-| Milan Šťastný     | Automate Everything                                                          | 10:20 |
-| Stephanie Laingen | The Worst                                                                    | 10:25 |
-| Ignite Improv     | What I've Learned from Community                                             | 11:00 |
-| Ignite Improv     | Should Kids be taught DevOps                                                 | 11:05 |
-| Ignite Improv     | Lint This!                                                                   | 11:10 |
-| Ignite Improv     | One More Round?                                                              | 11:15 |
+| Presenter             | Presentation                                                                 | Time |
+| --------------------- | ---------------------------------------------------------------------------- | ---- |
+| Mike Butler           | Welcome to Ignite the Holidays                                               | 7:30 |
+| Will Gorman           | AO4SD - Accelerate Orlando for Software Developers                           | 7:35 |
+| Jerry Reed            | Software Quilts                                                              | 7:40 |
+| Robert Schneider      | How to Take Good Notes                                                       | 7:45 |
+| Rachel LaQuea         | Frequencies: an interactive sound therapy app                                | 7:50 |
+| Luis Felipe Hernandez | Unit testing the Linux Kernel                                                | 8:15 |
+| Jianyu Wang           | Survive My First Year of Full-time Software Engineer                         | 8:20 |
+| Christopher Pecoraro  | When crisis sets in: How should we manage critical website changes?          | 8:25 |
+| William Cook          | Why Go?                                                                      | 8:30 |
+| Mark Prather          | Boundaries, Game Theory, and James Bond Villians                             | 8:35 |

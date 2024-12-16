@@ -24,7 +24,7 @@ cat > /tmp/$$ <<EOF
 EOF
 
 i=1
-for file in $(find resources/images/improv-hallucinations -type f)
+for file in $(find resources/images/improv-hallucinations -type f | shuf -n ${SLIDES} --random-source /dev/random)
 do
     if [[ ! -e slides/${i}.html ]]; then
 	echo "" > slides/${i}.html

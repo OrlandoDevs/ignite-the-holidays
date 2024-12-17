@@ -1,6 +1,9 @@
 node_modules
 bower_components
+.vscode
+
 index.html
+package-lock.json
 
 slides/list.json
 slides/*.html

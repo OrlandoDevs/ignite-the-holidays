@@ -1,6 +1,3 @@
-
-<BR><BR>
-
 ## Boundaries, Game Theory,
 ## and James Bond Villians
 

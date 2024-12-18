@@ -1,7 +1,8 @@
 # Frequencies
 <BR><BR>
 
-## An interactive sound therapy app
+## An Interactive 
+## Sound therapy app
 
 <BR><BR>
 

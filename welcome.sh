@@ -6,7 +6,7 @@ set -o pipefail
 SCRIPT_PATH="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)/$(basename "${BASH_SOURCE[0]}")"
 SCRIPT_DIR=$(dirname ${SCRIPT_PATH})
 
-SLIDES=${1:-20}
+SLIDES=${1:-6}
 
 cd $SCRIPT_DIR
 
@@ -24,7 +24,7 @@ cat > /tmp/$$ <<EOF
 EOF
 
 i=1
-for file in $(find resources/images/openspaces -type f)
+for file in $(find resources/images/welcome -type f)
 do
     if [[ ! -e slides/${i}.html ]]; then
 	echo "" > slides/${i}.html

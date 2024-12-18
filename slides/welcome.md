@@ -1,9 +1,8 @@
-# Welcome
+## Welcome to
+
+# Ignite
+# the Holidays
 
 <BR><BR>
 
-## Welcome To Ignite the Holidays
-
-<BR><BR>
-
-#### [By Mike Butler]
+#### [Presented By Brian Rinaldi]

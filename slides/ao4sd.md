@@ -2,8 +2,9 @@
 
 <BR><BR>
 
-## Accelerate Orlando for Software Developers
+## Accelerate Orlando
+## for Software Developers
 
 <BR><BR>
 
-#### [By Will Gorman]
+#### [Presented By Will Gorman]

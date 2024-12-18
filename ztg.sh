@@ -13,7 +13,7 @@ cd $SCRIPT_DIR
 cat > /tmp/$$ <<EOF
 [
     {
-      "filename": "TITLE.md",
+      "filename": "ztg.md",
       "attr":
       {
         "data-autoslide": 5000,
@@ -24,7 +24,7 @@ cat > /tmp/$$ <<EOF
 EOF
 
 i=1
-for file in $(find resources/images/TITLE -type f)
+for file in $(find resources/images/ztg -type f)
 do
     if [[ ! -e slides/${i}.html ]]; then
 	echo "" > slides/${i}.html

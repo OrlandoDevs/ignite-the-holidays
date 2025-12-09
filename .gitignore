@@ -3,7 +3,7 @@ bower_components
 .vscode
 
 index.html
-package-lock.json
+dist/
 
 slides/list.json
 slides/*.html

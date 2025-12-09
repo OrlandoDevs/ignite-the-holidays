@@ -20,17 +20,17 @@ Depending on what you built your slide deck in, you might be able to export the 
 
 Also, please remove the file called `deleteme` in your folder. This was temporary in order for the folder to be pushed to GitHub.
 
-> NOTE: Please include .jpg or .png images only. ALSO - File names ***cannot contain spaces***, or bad things happen.
+> NOTE: Please include .jpg or .png images only. ALSO - File names **_cannot contain spaces_**, or bad things happen.
 
-Once you put them in the folder, push it back to this repo and submit a *PR*. Don't worry about compiling it, unless you want to play around with this for your own use. To do so, follow the directions below and then you can just run the `(your-presentation).sh` file and then `grunt serve`
+Once you put them in the folder, push it back to this repo and submit a _PR_. Don't worry about compiling it, unless you want to play around with this for your own use. To do so, follow the directions below and then you can just run the `(your-presentation).sh` file and then `npm run dev`
 
 > LAST NOTE: **PLEASE PLEASE** - Don't peak in the `improv-` folders. I know, they are right there and very tempting, but I'd love you have all of you help with Improv (karaoke) as well, so that would be cheating. You are all happy to fork this repo and use it down the road if you wish.
 
 ## Thank you
 
-I want to thank you all for participating in Ignite the Holidays. I'm actually pretty excited about using this "tool" to present it.  
+I want to thank you all for participating in Ignite the Holidays. I'm actually pretty excited about using this "tool" to present it.
 
-___
+---
 
 ## About (From the original writer)
 
@@ -44,22 +44,61 @@ Ignite Karaokes follow the [Ignite (Enlighten us, but make it quick)](http://www
 
 It is built on the shoulders of:
 
-* [hakimel/reveal.js: The HTML Presentation Framework](https://github.com/hakimel/reveal.js#slide-backgrounds)
-* [slara/generator-reveal: Yeoman generator for Reveal.js](https://github.com/slara/generator-reveal)
-* [Unsplash - The internet's source of freely usable images.](https://unsplash.com)
+- [hakimel/reveal.js: The HTML Presentation Framework](https://github.com/hakimel/reveal.js#slide-backgrounds)
+- [slara/generator-reveal: Yeoman generator for Reveal.js](https://github.com/slara/generator-reveal)
+- [Unsplash - The internet's source of freely usable images.](https://unsplash.com)
 
-## Configuration
+### Installation
 
-1. In order to run this, you need `npm`, `grunt`, and `bower` installed. (`npm install -g grunt`, `npm install -g bower`)
-2. The script which randomizes things requires `bash` and `shuf`
-3. Execute the following: `npm install && bower install`
-4. Copy image files into `resources/images/ignite`; you need at least 20. The more the better! There are some sample files in the directory.
+```bash
+npm install
+```
 
-## Usage
+### Development
 
-1. Start the server with `grunt serve`
-2. In the lower left, click on the "play" button to start. The first slide will be up for 5 seconds, afterwards there are 20 slides which are up for 15 seconds each.
-3. To refresh and rewind, execute the `refill.sh` script.
+Start the development server with live reload:
+
+```bash
+npm run dev
+# or
+npm start
+```
+
+The presentation will be available at http://localhost:9000
+
+### Building
+
+Build the presentation for distribution:
+
+```bash
+npm run build
+```
+
+The output will be in the `dist/` directory.
+
+### Testing
+
+Run linting and build tests:
+
+```bash
+npm test
+```
+
+### Code Quality
+
+Format and lint your code:
+
+```bash
+npm run format
+npm run format:check
+npm run lint
+npm run lint:fix
+```
+
+### Other Commands
+
+- `npm run clean` - Remove build artifacts
+- `npm run prebuild` - Generate index.html from templates
 
 ## Presenters and Order
 

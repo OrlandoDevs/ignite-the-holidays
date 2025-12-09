@@ -1,25 +1,53 @@
 {
   "name": "ignite-the-holidays",
-  "version": "0.0.0",
+  "version": "2.0.0",
+  "description": "Ignite the Holidays presentation using reveal.js",
   "private": true,
-  "devDependencies": {
-    "coffeelint": "^1.16.0",
-    "grunt": "^1.6.1",
-    "grunt-coffeelint": "0.0.16",
-    "grunt-contrib-connect": "^1.0.2",
-    "grunt-contrib-copy": "^1.0.0",
-    "grunt-contrib-jshint": "^1.1.0",
-    "grunt-contrib-watch": "^1.0.0",
-    "load-grunt-tasks": "^3.5.2"
-  },
-  "engines": {
-    "node": ">=4"
-  },
   "scripts": {
-    "test": "grunt test"
+    "prebuild": "node scripts/build-index.js",
+    "build": "npm run prebuild && npm run copy",
+    "copy": "cpx '{slides/**,js/**,resources/**,index.html,node_modules/reveal.js/dist/**,node_modules/reveal.js/plugin/**}' dist",
+    "dev": "npm run prebuild && npm-run-all2 --parallel serve watch",
+    "serve": "serve . -l 9000",
+    "watch": "chokidar 'slides/**/*.md' 'templates/*.html' 'slides/list.json' -c 'npm run prebuild'",
+    "lint": "eslint 'scripts/**/*.js'",
+    "lint:fix": "eslint 'scripts/**/*.js' --fix",
+    "format": "prettier --write '**/*.{js,json,yml,yaml}'",
+    "format:check": "prettier --check '**/*.{js,json,yml,yaml}'",
+    "test": "npm run format:check && npm run lint && npm run test:build",
+    "test:build": "node scripts/build-index.js && node scripts/test-build.js",
+    "clean": "rm -rf dist index.html",
+    "prepare": "husky",
+    "start": "npm run dev"
+  },
+  "type": "module",
+  "engines": {
+    "node": ">=24.0.0",
+    "npm": ">=10.0.0"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.17.0",
+    "chokidar-cli": "^3.0.0",
+    "cpx2": "^7.0.1",
+    "eslint": "^9.17.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-prettier": "^5.2.1",
+    "husky": "^9.1.7",
+    "lint-staged": "^15.2.11",
+    "npm-run-all2": "^7.0.2",
+    "prettier": "^3.4.2",
+    "serve": "^14.2.1"
   },
   "dependencies": {
-    "bower": "^1.8.14",
-    "coffeescript": "^2.7.0"
+    "reveal.js": "^5.1.0"
+  },
+  "keywords": [
+    "presentation",
+    "reveal.js",
+    "ignite"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/orlandodevs/ignite-the-holidays.git"
   }
 }

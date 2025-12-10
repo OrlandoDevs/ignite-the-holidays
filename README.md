@@ -99,19 +99,3 @@ npm run lint:fix
 
 - `npm run clean` - Remove build artifacts
 - `npm run prebuild` - Generate index.html from templates
-
-## Presenters and Order
-
-| Presenter             | Presentation                                                        | Time |
-| --------------------- | ------------------------------------------------------------------- | ---- |
-| Brian Rinaldi         | Welcome to Ignite the Holidays                                      | 7:30 |
-| Will Gorman           | AO4SD - Accelerate Orlando for Software Developers                  | 7:35 |
-| Jerry Reed            | Software Quilts                                                     | 7:40 |
-| Robert Schneider      | How to Take Good Notes                                              | 7:45 |
-| Rachel LaQuea         | Frequencies: an interactive sound therapy app                       | 7:50 |
-| Mike Butler           | Zero Trust Given                                                    | 7:55 |
-| Luis Felipe Hernandez | Unit testing the Linux Kernel                                       | 8:15 |
-| Jianyu Wang           | Survive My First Year of Full-time Software Engineer                | 8:20 |
-| Christopher Pecoraro  | When crisis sets in: How should we manage critical website changes? | 8:25 |
-| William Cook          | Why Go?                                                             | 8:30 |
-| Mark Prather          | Boundaries, Game Theory, and James Bond Villians                    | 8:35 |

@@ -75,7 +75,11 @@ function buildIndex() {
   }
 }
 
-if (import.meta.url === `file://${process.argv[1]}`) {
+// Convert file path to file URL for cross-platform compatibility
+const scriptPath = fileURLToPath(import.meta.url);
+const runPath = path.resolve(process.argv[1]);
+
+if (scriptPath === runPath) {
   buildIndex();
 }
 

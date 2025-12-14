@@ -1,3 +1,11 @@
 [
-  "welcome.md"
+    {
+      "filename": "welcome.md",
+      "attr":
+      {
+        "data-autoslide": 5000,
+        "data-background": "#fffff",
+        "data-background-image": "resources/images/ith-background.png"
+      }
+    }
 ]

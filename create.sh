@@ -6,14 +6,24 @@ set -o pipefail
 SCRIPT_PATH="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)/$(basename "${BASH_SOURCE[0]}")"
 SCRIPT_DIR=$(dirname ${SCRIPT_PATH})
 
-SLIDES=${1:-20}
+# Get the topic from parameter or prompt
+TOPIC=${1:-}
+if [[ -z "$TOPIC" ]]; then
+    read -p "Enter topic name: " TOPIC
+fi
 
-cd $SCRIPT_DIR
+# Get random option from parameter or prompt
+RANDOM_OPT=${2:-}
+if [[ -z "$RANDOM_OPT" ]]; then
+    read -p "Random order? (yes/no): " RANDOM_OPT
+fi
+
+SLIDES=${3:-20}
 
 cat > /tmp/$$ <<EOF
 [
     {
-      "filename": "improv-hallucinations.md",
+      "filename": "${TOPIC}.md",
       "attr":
       {
         "data-autoslide": 5000,
@@ -24,7 +34,14 @@ cat > /tmp/$$ <<EOF
 EOF
 
 i=1
-for file in $(find resources/images/improv-hallucinations -type f | shuf -n ${SLIDES} --random-source /dev/random)
+# Get files based on random option
+if [[ "$RANDOM_OPT" == "random" || "$RANDOM_OPT" == "yes" ]]; then
+    FILES=$(find resources/images/${TOPIC} -type f | shuf -n ${SLIDES} --random-source /dev/random)
+else
+    FILES=$(find resources/images/${TOPIC} -type f | sort | head -n ${SLIDES})
+fi
+
+for file in $FILES
 do
     if [[ ! -e slides/${i}.html ]]; then
 	echo "" > slides/${i}.html

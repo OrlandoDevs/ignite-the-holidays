@@ -1,11 +1,15 @@
+#### Orlando Devs Proudly Presents
+
 ## *Ignite the Holidays - 2025*
+
 <br><br>
 
-# How AI helped me
+# How AI helped
 
-## become a better
+## me to become a better
 
 ## Software Developer
+
 <br><br>
 
-### [Christian Fontanez]
+### _[Christian Fontanez]_

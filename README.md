@@ -6,7 +6,7 @@ You should have 20 slides without an introduction slide (or can if you need, but
 
 Each slide will automatically advance with this tool every 15 seconds. One nice thing about this tool is that it does have a little "counter" so you know in relative terms how much longer that slide will be displayed.
 
-If you have ANY questions, please reach out to me directly in Slack!
+If you have ANY questions, please reach out to me directly in Discord!
 
 ## IMPORTANT IGNITE THE HOLIDAYS PARTICIPANTS INFORMATION
 
@@ -22,7 +22,20 @@ Also, please remove the file called `deleteme` in your folder. This was temporar
 
 > NOTE: Please include .jpg or .png images only. ALSO - File names **_cannot contain spaces_**, or bad things happen.
 
-Once you put them in the folder, push it back to this repo and submit a _PR_. Don't worry about compiling it, unless you want to play around with this for your own use. To do so, follow the directions below and then you can just run the `(your-presentation).sh` file and then `npm run dev`
+Once you put them in the folder, push it back to this repo and submit a _PR_. Don't worry about compiling it, unless you want to play around with this for your own use.
+
+To do so, create a file named the same as your folder .md inside the slides\ folder such as `slides\mypres.md`. You can reference any of the existing files there for reference on formatting. This generates the title slide.  then you can just run the `create.sh yourfolder dark/light no` file and then `npm run dev`.
+
+The create.sh and create.ps1 files in the root create the presentation files needed. There are three switches to it.
+
+* folder_name - this is the name of the folder that your images are in. The name also needs to match the markdown file.
+* mode - (dark) or (light) - will create the deck with the Title page to be in dark mode or light mode and adjust text color.
+* random - (yes) or (no) - will randomize the deck if you are build it for improv / karaoke.
+
+Examples:
+
+* `.\create.ps1 welcome light no | npm run dev` will build the deck called welcome and run the slide server.
+* `bash create.sh improv-orig dark yes | npm run dev` will build the deck called improv-orig and randomize the images and start the slide server.
 
 > LAST NOTE: **PLEASE PLEASE** - Don't peak in the `improv-` folders. I know, they are right there and very tempting, but I'd love you have all of you help with Improv (karaoke) as well, so that would be cheating. You are all happy to fork this repo and use it down the road if you wish.
 
@@ -30,11 +43,11 @@ Once you put them in the folder, push it back to this repo and submit a _PR_. Do
 
 I want to thank you all for participating in Ignite the Holidays. I'm actually pretty excited about using this "tool" to present it.
 
+A 2025 shout out goes to Felipe Hernandez for modernizing this platform. It now is original enough to call it it's own, moving off of the generation tools that it used to use.
+
 ---
 
-## About (From the original writer)
-
-This repo provides tools to allow someone to run a series of Ignite Karaokes.
+## About Ignite Improv (Karaoke)
 
 Ignite Karaokes follow the [Ignite (Enlighten us, but make it quick)](http://www.ignitetalks.io/) format -- 20 slides, each slide is up for 15 seconds. But with a twist... you don't know what slides will appear!
 

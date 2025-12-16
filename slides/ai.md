@@ -4,12 +4,12 @@
 
 <br><br>
 
-# Just In Time
+# How AI helped
 
-### Game Compilation of
+## me to become a better
 
-## _NES Games in .net_
+## Software Developer
 
 <br><br>
 
-### _[Matthew Shapiro]_
+### _[Christian Fontanez]_

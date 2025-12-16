@@ -12,13 +12,28 @@ if [[ -z "$TOPIC" ]]; then
     read -p "Enter topic name: " TOPIC
 fi
 
+# Get mode option from parameter or prompt
+MODE=${2:-}
+if [[ -z "$MODE" ]]; then
+    read -p "Mode (light/dark): " MODE
+fi
+
 # Get random option from parameter or prompt
-RANDOM_OPT=${2:-}
+RANDOM_OPT=${3:-}
 if [[ -z "$RANDOM_OPT" ]]; then
     read -p "Random order? (yes/no): " RANDOM_OPT
 fi
 
-SLIDES=${3:-20}
+SLIDES=${4:-20}
+
+# Set background and color based on mode
+if [[ "$MODE" == "dark" ]]; then
+    BACKGROUND_IMAGE="resources/images/ith-black-background.png"
+    HEADING_COLOR="#fff"
+else
+    BACKGROUND_IMAGE="resources/images/ith-background.png"
+    HEADING_COLOR="#444"
+fi
 
 cat > /tmp/$$ <<EOF
 [
@@ -28,7 +43,7 @@ cat > /tmp/$$ <<EOF
       {
         "data-autoslide": 5000,
         "data-background": "#fffff",
-        "data-background-image": "resources/images/ith-background.png"
+        "data-background-image": "${BACKGROUND_IMAGE}"
       }
     },
 EOF
@@ -40,6 +55,9 @@ if [[ "$RANDOM_OPT" == "random" || "$RANDOM_OPT" == "yes" ]]; then
 else
     FILES=$(find resources/images/${TOPIC} -type f | sort | head -n ${SLIDES})
 fi
+
+# Count actual number of files
+FILE_COUNT=$(echo "$FILES" | wc -l)
 
 for file in $FILES
 do
@@ -53,11 +71,14 @@ do
     echo "            \"data-background-size\": \"contain\"" >> /tmp/$$
     echo "        }" >> /tmp/$$
     echo -n "   }" >> /tmp/$$
-    i=$((i + 1))
-    if [[ $i -le ${SLIDES} ]]; then
+    if [[ $i -lt ${FILE_COUNT} ]]; then
 	echo "," >> /tmp/$$
     fi
+    i=$((i + 1))
 done
 echo "]" >> /tmp/$$
 
 mv /tmp/$$ slides/list.json
+
+# Update template with heading color based on mode
+sed -i "s/color: #[0-9a-fA-F]\{3,6\};/color: ${HEADING_COLOR};/" templates/_index.html

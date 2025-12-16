@@ -12,13 +12,28 @@ if ([string]::IsNullOrWhiteSpace($TOPIC)) {
     $TOPIC = Read-Host "Enter topic name"
 }
 
+# Get mode option from parameter or prompt
+$MODE = if ($args.Count -gt 1) { $args[1] } else { "" }
+if ([string]::IsNullOrWhiteSpace($MODE)) {
+    $MODE = Read-Host "Mode (light/dark)"
+}
+
 # Get random option from parameter or prompt
-$RANDOM_OPT = if ($args.Count -gt 1) { $args[1] } else { "" }
+$RANDOM_OPT = if ($args.Count -gt 2) { $args[2] } else { "" }
 if ([string]::IsNullOrWhiteSpace($RANDOM_OPT)) {
     $RANDOM_OPT = Read-Host "Random order? (yes/no/random)"
 }
 
-$SLIDES = if ($args.Count -gt 2) { [int]$args[2] } else { 20 }
+$SLIDES = if ($args.Count -gt 3) { [int]$args[3] } else { 20 }
+
+# Set background and color based on mode
+if ($MODE -eq "dark") {
+    $BACKGROUND_IMAGE = "resources/images/ith-black-background.png"
+    $HEADING_COLOR = "#fff"
+} else {
+    $BACKGROUND_IMAGE = "resources/images/ith-background.png"
+    $HEADING_COLOR = "#4B4E52"
+}
 
 # Create temporary file
 $tempFile = New-TemporaryFile
@@ -35,7 +50,7 @@ $jsonContent = @"
       {
         "data-autoslide": 5000,
         "data-background": "#fffff",
-        "data-background-image": "resources/images/ith-background.png"
+        "data-background-image": "$BACKGROUND_IMAGE"
       }
     },
 "@
@@ -49,6 +64,9 @@ if ($RANDOM_OPT -eq "random" -or $RANDOM_OPT -eq "yes") {
              Sort-Object Name |
              Select-Object -First $SLIDES
 }
+
+# Count actual number of files
+$fileCount = ($files | Measure-Object).Count
 
 $i = 1
 foreach ($file in $files) {
@@ -66,7 +84,7 @@ foreach ($file in $files) {
     $jsonContent += "`n            `"data-background-size`": `"contain`""
     $jsonContent += "`n        }"
     
-    if ($i -lt $SLIDES) {
+    if ($i -lt $fileCount) {
         $jsonContent += "`n   },"
     } else {
         $jsonContent += "`n   }"
@@ -82,3 +100,9 @@ $jsonContent += "`n]"
 
 # Move temp file to destination
 Move-Item -Path $tempFile -Destination "slides/list.json" -Force
+
+# Update template with heading color based on mode
+$templatePath = "templates/_index.html"
+$templateContent = Get-Content $templatePath -Raw
+$templateContent = $templateContent -replace 'color:\s*#[0-9a-fA-F]{3,6};', "color: $HEADING_COLOR;"
+[System.IO.File]::WriteAllText((Resolve-Path $templatePath).Path, $templateContent, $utf8NoBom)

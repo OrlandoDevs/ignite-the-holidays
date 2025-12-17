@@ -58,11 +58,10 @@ $jsonContent = @"
 # Get files from the directory based on random option
 if ($RANDOM_OPT -eq "random" -or $RANDOM_OPT -eq "yes") {
     $files = Get-ChildItem -Path "resources/images/$TOPIC" -File | 
-             Get-Random -Count $SLIDES
+             Get-Random -Count ([int]::MaxValue)
 } else {
     $files = Get-ChildItem -Path "resources/images/$TOPIC" -File | 
-             Sort-Object Name |
-             Select-Object -First $SLIDES
+             Sort-Object Name
 }
 
 # Count actual number of files

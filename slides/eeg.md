@@ -8,7 +8,7 @@
 
 ## My Experience creating
 
-## an EEG Pong Game 
+## an EEG Pong Game
 
 <br><br><br>
 

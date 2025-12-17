@@ -9,4 +9,4 @@
 # AI Retooling
 <br><br><br>
 
-### _[Will Gorman]_
+### _[ Will Gorman ]_

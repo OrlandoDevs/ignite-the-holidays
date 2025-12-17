@@ -12,4 +12,4 @@
 
 <br><br><br>
 
-### _[Javiera Laso]_
+### _[ Javiera Laso ]_

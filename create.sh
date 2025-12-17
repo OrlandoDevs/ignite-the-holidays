@@ -51,9 +51,9 @@ EOF
 i=1
 # Get files based on random option
 if [[ "$RANDOM_OPT" == "random" || "$RANDOM_OPT" == "yes" ]]; then
-    FILES=$(find resources/images/${TOPIC} -type f | shuf -n ${SLIDES} --random-source /dev/random)
+    FILES=$(find resources/images/${TOPIC} -type f | shuf --random-source /dev/random)
 else
-    FILES=$(find resources/images/${TOPIC} -type f | sort | head -n ${SLIDES})
+    FILES=$(find resources/images/${TOPIC} -type f | sort)
 fi
 
 # Count actual number of files

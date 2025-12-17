@@ -8,8 +8,8 @@
 
 ## My Experience creating
 
-## an EEG Pong Game 
+## an EEG Pong Game
 
 <br><br><br>
 
-### _[Fabricio Guacuto]_
+### _[ Fabricio Guacuto ]_

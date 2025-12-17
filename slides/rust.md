@@ -2,12 +2,12 @@
 
 ## *Ignite the Holidays - 2025*
 
-<br><br>
+<br><br><br>
 
 ## My Journey
 
 # Learning Rust
 
-<br><br><br><br><br>
+<br><br><br><br>
 
-### _[Anders Ackerman]_
+### _[ Anders Ackerman ]_
